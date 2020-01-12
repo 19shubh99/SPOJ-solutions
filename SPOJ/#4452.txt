@@ -1,0 +1,59 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+
+{
+
+    long long int t;
+
+    cin>>t;
+
+    while(t-->0)
+
+    {
+
+        long long int nmbr,ini;
+
+        char oprtn;
+
+        cin>>ini>>oprtn;
+
+        while(oprtn!=61)
+
+        {
+
+            cin>>nmbr;
+
+            if(oprtn==42)
+
+            ini*=nmbr;
+
+            else
+
+            if(oprtn==43)
+
+            ini+=nmbr;
+
+            else
+
+            if(oprtn==45)
+
+            ini-=nmbr;
+
+            else
+
+            if(oprtn==47)
+
+            ini/=nmbr;
+
+            cin>>oprtn;
+
+        }
+
+        cout<<ini<<endl;
+
+    }
+
+}

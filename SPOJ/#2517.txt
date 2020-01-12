@@ -1,0 +1,125 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+char a[10],b[10],c[10];
+
+bool check(char m[])
+
+{
+
+    int i;
+
+    for(i=0;i<10;i++)
+
+    {
+
+        if(m[i]=='m')
+
+        break;
+
+    }
+
+    if(i==10)
+
+    return true;
+
+    else
+
+    return false;
+
+}
+
+int convert(char m[])
+
+{
+
+    int i=0,sum=0;
+
+    while(m[i]!='\0')
+
+    {
+
+        sum*=10;
+
+        sum+=m[i]-48;
+
+        //cout<<m[i]<<" "<<sum<<" ";
+
+        i++;
+
+    }
+
+    return sum;
+
+}
+
+int main()
+
+{
+
+    int t;
+
+    cin>>t;
+
+    while(t-->0)
+
+    {
+
+        int s=-1,a1=-1,a2=-1;
+
+        char x,y;
+
+        memset(a,0,10);
+
+        memset(b,0,10);
+
+        memset(c,0,10);
+
+        cin>>a>>x>>b>>y>>c;
+
+        //cout<<(b);
+
+        //cout<<a<<b<<c;
+
+        if(check(a))
+
+        a1=convert(a);
+
+        if(check(c))
+
+        s=convert(c);
+
+        if(check(b))
+
+        a2=convert(b);
+
+        if(!check(c))
+
+        {
+
+            cout<<a<<" "<<x<<" "<<b<<" "<<y<<" "<<a1+a2;
+
+        }
+
+        if(!check(b))
+
+        {
+
+            cout<<a<<" "<<x<<" "<<s-a1<<" "<<y<<" "<<c;
+
+        }
+
+        if(!check(a))
+
+        {
+
+            cout<<s-a2<<" "<<x<<" "<<b<<" "<<y<<" "<<s;
+
+        }
+
+        cout<<endl;
+
+    }
+
+}

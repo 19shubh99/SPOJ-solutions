@@ -1,0 +1,76 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+void r(int n)
+
+{
+    
+if(n==1)
+
+    cout<<"2(0)";
+
+    if(n==2)
+
+    cout<<"2";
+
+    if(n==3)
+
+    cout<<"2+2(0)";
+
+    if(n>3)
+
+    {
+
+        int j;
+
+        for(j=0;j<=15;j++)
+
+        {
+
+            if(pow(2,j)<=n && pow(2,j+1)>n)
+
+            break;
+
+        }
+
+        cout<<"2(";
+
+        r(j);
+
+        cout<<")";
+
+        if(n-pow(2,j))
+
+        cout<<"+";
+
+        r(n-pow(2,j));
+
+    }
+
+    exit;
+
+}
+
+int main()
+
+{
+
+    int i,a[]={137,1315,73,136,255,1384,16385};
+
+    for(i=0;i<7;i++)
+
+    {
+
+        cout<<a[i]<<"=";
+
+        r(a[i]);
+
+        cout<<endl;
+
+    }
+
+}
+
+
+

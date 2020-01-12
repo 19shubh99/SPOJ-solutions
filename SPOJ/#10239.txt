@@ -1,0 +1,77 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int Min(int A[],int B[],int n1,int n2)
+
+{
+
+    int i=0,j=0;
+
+    int min=1000000;
+
+    sort(A,A+n1);
+
+    sort(B,B+n2);
+
+    while(i<n1 && j<n2)
+
+    {
+
+        if(min>abs(A[i]-B[j]))
+
+        min=abs(A[i]-B[j]);
+
+        if(A[i]<B[j])
+
+        i++;
+
+        else
+
+        j++;
+
+    }
+
+    return min;
+
+}
+
+int main()
+
+{
+
+    int t;
+
+    cin>>t;
+
+    while(t-->0)
+
+    {
+
+        int n1;
+
+        cin>>n1;
+
+        int A[n1];
+
+        int i;
+
+        for(i=0;i<n1;i++)
+
+        cin>>A[i];
+
+        int n2;
+
+        cin>>n2;
+
+        int B[n2];
+
+        for(i=0;i<n2;i++)
+
+        cin>>B[i];
+
+        cout<<Min(A,B,n1,n2)<<endl;
+
+    }
+
+}

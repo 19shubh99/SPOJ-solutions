@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    int x;
+    for(x=0;x<t;x++)
+    {
+        long long int a,b,c;
+        cin>>a>>b>>c;
+        long long int A,D,N;
+        N=(2*c)/(a+b);
+        D=(b-a)/(N-5);
+        A=a-2*D;
+        cout<<N<<endl;
+        long long int i;
+        for(i=1;i<=N;i++)
+        {
+            cout<<A+(i-1)*D<<" ";
+        }
+        cout<<endl;
+    }
+
+}

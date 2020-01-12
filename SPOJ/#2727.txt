@@ -1,0 +1,65 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+
+{
+
+    int t;
+
+    cin>>t;
+
+    while(t-->0)
+
+    {
+
+        int g,m;
+
+        cin>>g>>m;
+
+        int G[g],M[m];
+
+        int i,j;
+
+        for(i=0;i<g;i++)
+
+        cin>>G[i];
+
+        for(j=0;j<m;j++)
+
+        cin>>M[j];
+
+        sort(G,G+g);
+
+        sort(M,M+m);
+
+        i=0;
+
+        j=0;
+
+        while(i<g && j<m)
+
+        {
+
+            if(M[j]<=G[i])
+
+            j++;
+
+            else
+
+            i++;
+
+        }
+
+        if(i==g)
+
+        cout<<"MechaGodzilla"<<endl;
+
+        else
+
+        cout<<"Godzilla"<<endl;
+
+    }
+
+}

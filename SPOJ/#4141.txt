@@ -1,0 +1,59 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int tot(int n)
+
+{
+
+    int pro=n;
+
+    int i=2;
+
+    for(i=2;i*i<=n;i++)
+
+    {
+
+        if(n%i==0)
+
+        {
+
+            while(n%i==0)
+
+            n/=i;
+
+            pro-=pro/i;
+
+        }
+
+    }
+
+    if(n>1)
+
+    pro-=pro/n;
+
+    return pro;
+
+}
+
+int main()
+
+{
+
+    int t;
+
+    cin>>t;
+
+    while(t-->0)
+
+    {
+
+        int n;
+
+        cin>>n;
+
+        cout<<tot(n)<<endl;
+
+    }
+
+}

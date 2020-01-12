@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t != -1)
+    {
+        int a[t],x,s=0;
+        for(x=0;x<t;x++)
+        {
+            cin>>a[x];
+            s+=a[x];
+        }
+        int d=s/t,c=0;
+        if(s%t==0)
+        {
+            for(x=0;x<t;x++)
+            {
+                if(a[x]>d)
+                    c+=a[x]-d;
+            }
+            cout<<c<<endl;
+        }
+        else
+            cout<<"-1"<<endl;
+        cin>>t;
+    }
+}

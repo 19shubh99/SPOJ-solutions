@@ -1,0 +1,71 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+
+{
+
+    int t;
+
+    cin>>t;
+
+    while(t-->0)
+
+    {
+
+        char b[1000],p[20];
+
+        memset(b,0,1000);
+
+        memset(p,0,20);
+
+        scanf("%s %s",b,p);
+
+        int i=999;
+
+        while(b[i]==0)
+
+        i--;
+
+        int d=b[i]-48;
+
+        i=19;
+
+        while(p[i]==0)
+
+        i--;
+
+        int x=(p[i]-48);
+
+        if(i>=1)
+
+        x+=(p[i-1]-48)*10;
+
+        if(p[0]-48 ==0)
+
+        cout<<"1"<<endl;
+
+        else
+
+        {
+
+            if(x%4!=0)
+
+            x=x%4;
+
+            else
+
+            x=4;
+
+            x=pow(d,x);
+
+            x=x%10;
+
+            cout<<x<<endl;
+
+        }
+ 
+    }
+
+}

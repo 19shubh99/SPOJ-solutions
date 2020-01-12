@@ -1,0 +1,20 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    float f;
+    cin>>f;
+    while(f!=0.0)
+    {
+        f*=100.00;
+        int i=1;
+        float s=50.00;
+        while(s-f<0)
+        {
+            s+=100.00/(i+2);
+            i++;
+        }
+        cout<<i<<" card(s)"<<endl;
+        cin>>f;   
+    }
+}

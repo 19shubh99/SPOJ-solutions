@@ -1,0 +1,63 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+
+{
+
+    int n;
+
+    cin>>n;
+
+    for(int x=0;x<n;x++)
+
+    {
+
+        int S[24];
+
+        memset(S,-1,sizeof(S));
+
+        int a,i=0;
+
+        cin>>a;
+
+        if(a%2==0)
+
+        while(a)
+
+        {
+
+            S[i++]=a%2;
+
+            a/=2;
+
+        }
+
+        int pro=0,j=0;
+
+        i=23;
+
+        while(i>=0)
+
+        {
+
+            if(S[i]>=0)
+
+            pro+=(S[i]*pow(2,j++));
+
+            i--;
+
+        }
+
+        if(a%2==0)
+
+        cout<<pro<<endl;
+
+        else
+
+        cout<<a<<endl;
+
+    }
+
+}

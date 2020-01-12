@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t,x;
+    cin>>t;
+    for(x=1;x<=t;x++)
+    {
+        int m,n;
+        cin>>m>>n;
+        int i;
+        for(i=m;i<=n;)
+        {
+            int a=2;
+            while(i%a !=0 && a<=sqrt(i))
+            {
+                a++;
+            }
+                if(a>sqrt(i) && i!=1)
+                    cout<<i<<endl;
+            i++;
+        }
+        cout<<endl;
+    }
+}

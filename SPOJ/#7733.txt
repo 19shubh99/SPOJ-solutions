@@ -1,0 +1,56 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+
+{
+
+    int n,s=0,i=0;
+
+    cin>>n;
+
+    while(1)
+
+    {
+
+        s+=(n%10)*(n%10);
+
+        n/=10;
+
+        if(n==0)
+
+        {
+
+            i++;
+
+            n=s;
+
+            if(s==1)
+
+            break;
+
+            else
+
+            s=0;
+
+            if(n<10 && n!=7)
+
+            {
+
+                cout<<-1;
+
+                break;
+
+            }
+
+        }
+
+        
+    }
+
+    if(s==1)
+
+    cout<<i;
+
+}

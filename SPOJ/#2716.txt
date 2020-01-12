@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+
+{
+
+    int t;
+
+    cin>>t;
+
+    while(t-->0)
+
+    {
+
+        double a,b,c,d,s=0;
+
+        cin>>a>>b>>c>>d;
+
+        s=(a+b+c+d)/2.0;
+
+        s=sqrt((s-a)*(s-b)*(s-c)*(s-d));
+
+        cout<<fixed<<setprecision(2)<<s<<endl;
+
+    }
+
+}

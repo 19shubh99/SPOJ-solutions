@@ -1,0 +1,61 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+
+{
+    
+long long int n;
+
+    while(cin>>n)
+
+    {
+
+        string pat;
+
+        string txt;
+
+        cin>>pat;
+
+        cin>>txt;
+
+        long long int i=0,j;
+
+        long long int x=txt.length();
+
+        if(x-n>=0)
+
+        {
+
+            while(i<=x-n)
+
+            {
+
+                for(j=0;j<n;j++)
+
+                {
+
+                    if(pat[j]!=txt[i+j])
+
+                    break;
+
+                }
+
+                if(j==n)
+
+                cout<<i<<endl;
+
+                i++;
+
+            }
+
+        }
+
+        else
+
+        cout<<endl;
+
+    }
+
+}

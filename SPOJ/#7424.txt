@@ -1,0 +1,15 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int a,b;
+    cin>>a>>b;
+    while(a!=-1 && b!=-1)
+    {
+        double min=std::min(a,b);
+        double max=std::max(a,b);
+        double n=max/(min+1);
+        cout<<ceil(n)<<endl;
+        cin>>a>>b;
+    }
+}

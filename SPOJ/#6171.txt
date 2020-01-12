@@ -1,0 +1,60 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+
+{
+
+    int s[2000];
+
+    int t;
+
+    cin>>t;
+
+    while(t-->0)
+
+    {
+
+        int n;
+
+        cin>>n;
+
+        memset(s,0,sizeof(s));
+
+        int i,t,max=0,m;
+
+        for(i=0;i<n;i++)
+
+        {
+
+            cin>>t;
+
+            s[t+1000]++;
+
+            //cout<<s[t+1000]<<" ";
+
+            if(s[t+1000]>max)
+
+            {
+
+                max=s[t+1000];
+
+                m=t;
+
+            }
+
+        }
+
+        if(max>n/2)
+
+        cout<<"YES "<<m<<endl;
+
+        else
+
+        cout<<"NO"<<endl;
+
+        
+    }
+
+}

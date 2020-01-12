@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+int count(int a);
+int main()
+{
+    int n;
+    cin>>n;
+    cout<<count(n);
+}
+int count(int a)
+{
+    int s=0;
+    int c=0;
+        for(int j=1;j<=sqrt(a);j++)
+        {
+            if((a)%j==0)
+                c++;
+        }
+    if(a==1)
+        return 1;
+    else
+    s=c+count(a-1);
+    return s;
+}

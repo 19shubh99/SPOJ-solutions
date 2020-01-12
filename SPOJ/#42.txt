@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+using namespace std;
+int rev(int a);
+int main()
+{
+    int t;
+    cin>>t;
+    int x;
+    for(x=0;x<t;x++)
+    {
+        int a,b;
+        cin>>a>>b;
+        cout<<rev(rev(a)+rev(b))<<endl;
+    }
+}
+int rev(int a)
+{
+    //length
+    int l=1,i=10;
+    
+    while(a/i>0)
+    {
+        i*=10;
+        l++;
+    }
+    //reverse
+    int c=0;
+    while(a>0)
+    {
+        c+=(a%10)*pow(10,l-1);
+        l--;
+        a/=10;
+    }
+    return c;
+}

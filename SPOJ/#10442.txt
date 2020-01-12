@@ -1,0 +1,55 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+
+{
+
+    int n;
+
+    cin>>n;
+
+    while(n!=0)
+
+    {
+
+        long long int S[n],P[n];
+
+        for(int i=0;i<n;i++)
+
+        {
+
+            cin>>S[i];
+
+        }
+
+        for(int i=0;i<n;i++)
+
+        {
+
+            cin>>P[i];
+
+        }
+
+        sort(S,S+n);
+
+        sort(P,P+n);
+
+        long long int c=0;
+
+        for(int i=0;i<n;i++)
+
+        {
+
+            c+=S[n-i-1]*P[i];
+
+        }
+
+        cout<<c<<endl;
+
+        cin>>n;
+
+    }
+
+}

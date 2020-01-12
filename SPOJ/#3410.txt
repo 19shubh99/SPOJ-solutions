@@ -1,0 +1,15 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int a;
+    cin>>a;
+    if(a!=0)
+    cout<<(a*(a+1)*(2*a+1))/6<<endl;
+    while(a!=0)
+    {
+        cin>>a;
+        if(a!=0)
+        cout<<(a*(a+1)*(2*a+1))/6<<endl;
+    }
+}

@@ -1,0 +1,15 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long int n;
+    scanf("%lld",&n);
+    long long int x=0,a;
+    while(n>0)
+    {
+        scanf("%lld",&a);
+        x=x^a;
+        n--;
+    }
+    printf("%lld",x);
+}

@@ -1,0 +1,73 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int mod(string b,int a)
+
+{
+
+    int n=0,i=0,l=b.length();
+
+    while(n<a)
+
+        {
+
+            n=n*10+(b[i++]-48);
+
+            n=n%a;
+
+            if(i==l)
+
+            break;
+
+        }
+
+        return n;
+
+}
+
+int gcd(int a,int b)
+
+{
+
+    if(b==0)
+
+    return a;
+
+    else
+
+    return gcd(b,a%b);
+
+}
+
+int main()
+
+{
+
+    long long int t;
+
+    cin>>t;
+
+    while(t-->0)
+
+    {
+
+        int a;
+
+        string b;
+
+        cin>>a>>b;
+
+        int ans=gcd(a,mod(b,a));
+
+        if(a!=0)
+
+        cout<<ans<<endl;
+
+        else
+
+        cout<<b<<endl;
+
+    }
+
+}

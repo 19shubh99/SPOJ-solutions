@@ -1,0 +1,75 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+
+{
+
+    int a,d;
+
+    scanf("%d%d",&a,&d);
+
+    while(a!=0 && d!=0)
+
+    {
+
+        int b[a],c[d];
+
+        int i,min=10005,m1=10005,m2=100050;
+
+        for(i=0;i<a;i++)
+
+        {
+
+            scanf("%d",&b[i]);
+
+            if(b[i]<=min)
+
+            min=b[i];
+
+        }
+
+        for(i=0;i<d;i++)
+
+        {
+
+            scanf("%d",&c[i]);
+
+        }
+
+        for(i=0;i<d;i++)
+
+        {
+
+            if(c[i]<=m1)
+
+            {
+
+                m2=m1;
+
+                m1=c[i];
+
+            }
+
+            else
+
+            if(c[i]<m2)
+
+            m2=c[i];
+
+        }
+
+        if(min>=m2)
+
+        printf("N\n");
+
+        else
+
+        printf("Y\n");
+
+        scanf("%d%d",&a,&d);
+    
+    }
+
+}

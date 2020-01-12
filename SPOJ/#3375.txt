@@ -1,0 +1,44 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    int x;
+    for(x=1;x<=t;x++)
+    {
+        int b,f;
+        cin>>b>>f;
+        int s[f];
+        int i;
+        for(i=0;i<f;i++)
+            cin>>s[i];
+        //sort
+        int j;
+        for(i=0;i<f;i++)
+        {
+            for(j=i;j<f;j++)
+            {
+                int a;
+                if(s[j]>s[i])
+                {
+                    a=s[j];
+                    s[j]=s[i];
+                    s[i]=a;
+                }
+            }
+        }
+        int p=0;
+        i=0;
+        while(p<b && i<f)
+        {
+            p+=s[i];
+            i++;
+        }
+        if(p>=b)
+        cout<<"Scenario #"<<x<<":"<<endl<<i<<endl;
+        else
+            cout<<"Scenario #"<<x<<":"<<endl<<"impossible"<<endl;
+        cout<<endl;
+    }
+}

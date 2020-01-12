@@ -1,0 +1,45 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+
+{
+
+    int t;
+
+    cin>>t;
+
+    while(t--)
+
+    {
+
+        int n,k;
+
+        cin>>n>>k;
+
+        int N[n];
+
+        int i;
+
+        for(i=0;i<n;i++)
+
+        cin>>N[i];
+
+        sort(N,N+n);
+
+        int min=999999999;
+
+        for(i=0;i<=n-k;i++)
+
+        {
+
+            min=std::min(min,N[i+k-1]-N[i]);
+
+        }
+
+        cout<<min<<endl;
+
+    }
+
+}

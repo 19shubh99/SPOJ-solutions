@@ -1,0 +1,63 @@
+#include<bits/stdc++.h>
+using namespace std;
+long long int c=0;
+void ms(long long int A[],long long int l,long long int m,long long int r)
+{
+    //form two arrys of lengths
+    long long int n1=m-l+1;
+    long long int n2=r-m;
+    long long int L[n1],R[n2];
+    //copy items;
+    long long int i;
+    for(i=0;i<n1;i++)
+    L[i]=A[l+i];
+    for(i=0;i<n2;i++)
+    R[i]=A[m+1+i];
+    //refill
+    i=0;
+    long long int j=0;
+    long long int k=l;
+    while(i<n1 && j<n2)
+    {
+        if(L[i]>R[j])
+        {
+            A[k++]=R[j++];
+            c+=n1-i;
+        }
+        else
+        {
+            A[k++]=L[i++];
+        }
+    }
+    while(i<n1)
+    A[k++]=L[i++];
+    while(j<n2)
+    A[k++]=R[j++];
+}
+void merge(long long int A[],long long int l,long long int r)
+{
+    if(l<r)
+    {
+        long long int m=l+(r-l)/2;
+        merge(A,l,m);
+        merge(A,m+1,r);
+        ms(A,l,m,r);
+    }
+}
+int main()
+{
+    long long int t;
+    cin>>t;
+    while(t-->0)
+    {
+        c=0;
+        long long int n;
+        cin>>n;
+        long long int A[n];
+        long long int i;
+        for(i=0;i<n;i++)
+        cin>>A[i];
+        merge(A,0,n-1);
+        cout<<c<<endl;
+    }
+}

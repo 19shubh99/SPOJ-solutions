@@ -1,0 +1,14 @@
+#include<bits/stdc++.h>
+#define PI 3.14159
+using namespace std;
+int main()
+{
+    int l;
+    cin>>l;
+    while(l!=0)
+    {
+        float r=l/PI;
+        cout<<std::fixed<< std::setprecision(2)<<PI*r*r/2<<endl;
+        cin>>l;
+    }
+}

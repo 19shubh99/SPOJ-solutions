@@ -1,0 +1,45 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+long long int gcd(long long int a,long long int b)
+
+{
+
+    if(a==0)
+
+    return b;
+
+    else
+
+    return gcd(b%a,a);
+
+}
+
+int main()
+
+{
+
+    long long int a,b;
+
+    cin>>a>>b;
+
+    while(a!=0)
+
+    {
+
+        long long int l;
+
+        l=(a*b);
+
+        l/=gcd(a,b);
+
+        l/=gcd(a,b);
+
+        cout<<l<<endl;
+
+        cin>>a>>b;
+
+    }
+
+}

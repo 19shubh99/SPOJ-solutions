@@ -1,0 +1,37 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t!=0)
+    {
+        char s[200]={0};
+        cin>>s;
+        int l,j=0,i=0;
+        l=strlen(s);
+        char x[l/t][t];
+        while(s[i]!=0)
+        {
+            int y;
+            for(y=0;y<t;y++)
+            {
+                if(j%2==0)
+                    x[j][i%t]=s[i];
+                else
+                    x[j][t-1-i%t]=s[i];
+                i++;
+            }
+            j++;
+        }
+        for(i=0;i<t;i++)
+        {
+            for(j=0;j<l/t;j++)
+            {
+                cout<<x[j][i];
+            }
+        }
+        cout<<endl;
+        cin>>t;
+    }
+}

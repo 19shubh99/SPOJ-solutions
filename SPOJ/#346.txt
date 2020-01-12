@@ -1,0 +1,93 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+long long int s[1000001];
+
+long long int state(long long int n)
+
+{
+    
+if(n<1000001)
+
+    {
+
+        if(s[n]==-1)
+
+        {
+
+            long long int t=0;
+
+            t=state(n/2)+state(n/3)+state(n/4);
+
+            if(n<t)
+
+            {
+
+                s[n]=t;
+
+            }
+
+            else
+
+            {
+
+                s[n]=n;
+
+            }
+
+        }
+
+        return s[n];
+
+    }
+
+    else
+
+    {
+
+        long long int t=0;
+
+        t=state(n/2)+state(n/3)+state(n/4);
+
+        if(n<t)
+
+        {
+
+            return t;
+
+        }
+
+        else
+
+        {
+
+            return n;
+
+        }
+
+    }
+
+}
+
+int main()
+
+{
+
+    memset(s,-1,sizeof(s));
+
+    s[0]=0;
+ 
+   s[1]=1;
+
+    long long int n;
+
+    while(cin>>n)
+
+    {
+
+        cout<<state(n)<<endl;
+
+    }   
+
+}
