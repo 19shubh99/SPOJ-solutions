@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+using namespace std;
+int  main(){
+    int g,b;
+    cin>>g>>b;
+    while(g!=-1&&b!=-1){
+        if(g==b){
+            if(g==0){
+                cout<<"0"<<endl;
+            }
+            else{
+                cout<<"1"<<endl;
+            }
+        }
+        else{
+            int min;
+            int max;
+            if(g>b){
+                min=b;
+                max=g;}
+            else{
+                min=g;
+                max=b;}
+            int s = max/(min+1);
+            int r = max%(min+1);
+            if(r==0){
+                cout<<s<<endl;
+            }
+            else{
+                cout<<s+1<<endl;
+            }
+            
+        }
+        cin>>g>>b;
+    }
+}
